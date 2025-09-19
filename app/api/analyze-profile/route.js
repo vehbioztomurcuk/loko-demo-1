@@ -6,7 +6,7 @@ export async function POST(request) {
   try {
     const { profileData, type } = await request.json()
     
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' })
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' })
     
     let prompt = ''
     

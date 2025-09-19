@@ -355,7 +355,7 @@ class RolePlayApp {
         messageElement.className = `conversation-message ${sender}`;
         
         const senderLabel = {
-            'user': 'Siz (Satış Temsilcisi)',
+            'user': 'Siz (Başvuran)',
             'customer': 'Müşteri',
             'system': 'Sistem'
         }[sender];
