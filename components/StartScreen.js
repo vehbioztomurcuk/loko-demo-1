@@ -129,59 +129,85 @@ Maaş: Rekabetçi + Yan haklar
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
-      <header className="text-center py-16">
-        <h1 className="text-5xl md:text-6xl font-extralight text-gray-900 mb-6">
-          AI Mülakat Deneyimi
+      <header className="text-center py-12">
+        <h1 className="text-4xl md:text-5xl font-light text-gray-800 mb-4">
+          Anında Role-Play Deneyimi
         </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          İş ilanınızı yükleyin, 10 saniye içinde gerçek mülakat başlasın.
+        <p className="text-gray-600 text-lg max-w-4xl mx-auto mb-6">
+          İş ilanınızı yükleyin, 10 saniye içinde gerçek müşteri ile konuşmaya başlayın. 
+          AI anlık olarak size özel senaryo ve karakteri oluşturur.
         </p>
+        <div className="text-sm text-gray-500 max-w-3xl mx-auto">
+          <p className="mb-2">
+            ✨ <strong>Akıllı Analiz:</strong> İş ilanı içeriğine göre dinamik sorular ve kişiselleştirilmiş müşteri profili
+          </p>
+          <p className="mb-2">
+            🎯 <strong>Gerçek Senaryo:</strong> Pozisyonunuza uygun yaş, cinsiyet ve davranış kalıpları ile otomatik karakter
+          </p>
+          <p>
+            🎙️ <strong>Canlı Görüşme:</strong> Mikrofon iznini verin, AI müşteriniz sizi bekliyor
+          </p>
+        </div>
       </header>
 
       {/* Main Grid */}
       <div className="flex-1 flex items-center justify-center px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 max-w-5xl w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl w-full">
           
           {/* Left Side - File Upload */}
           <div className="text-center">
-            <div className="bg-gray-50 rounded-3xl p-12 hover:bg-gray-100 transition-colors">
-              <div className="text-6xl mb-6">📄</div>
-              <h2 className="text-2xl font-light text-gray-800 mb-8">Dosya Yükle</h2>
-              
+            <h2 className="text-2xl font-semibold text-gray-800 mb-8">📎 İş İlanı Yükle</h2>
+            
+            <div className="space-y-6">
               <button 
                 onClick={handleFileUpload}
-                className="w-full py-6 px-8 bg-lokomotif-green text-white rounded-2xl text-lg font-medium hover:bg-green-600 transition-colors shadow-lg"
+                className="w-full py-4 px-6 border-2 border-lokomotif-green rounded-2xl text-gray-700 font-medium hover:bg-gray-50 transition-colors"
                 disabled={isAnalyzing}
               >
-                Dosya Seç
+                📄 Dosya Seç
               </button>
             </div>
+
+            <p className="text-gray-500 text-sm mt-6">
+              PDF, DOC, HTML veya TXT formatında iş ilanı dökümanı yükleyin. 
+              AI otomatik özetleyip uygun müşteri profili oluşturacak.
+            </p>
           </div>
 
           {/* Right Side - URL Input */}
           <div className="text-center">
-            <div className="bg-gray-50 rounded-3xl p-12 hover:bg-gray-100 transition-colors">
-              <div className="text-6xl mb-6">🔗</div>
-              <h2 className="text-2xl font-light text-gray-800 mb-8">Link Yapıştır</h2>
-              
+            <h2 className="text-2xl font-semibold text-gray-800 mb-8">🔗 İlan Linkini Yapıştır</h2>
+            
+            <div className="space-y-6">
               <button 
                 onClick={handleUrlInput}
-                className="w-full py-6 px-8 bg-lokomotif-green text-white rounded-2xl text-lg font-medium hover:bg-green-600 transition-colors shadow-lg"
+                className="w-full py-4 px-6 border-2 border-lokomotif-green rounded-2xl text-gray-700 font-medium hover:bg-gray-50 transition-colors"
                 disabled={isAnalyzing}
               >
-                Link Ekle
+                🌐 Link Ekle
               </button>
             </div>
+
+            <p className="text-gray-500 text-sm mt-6">
+              Yenibiriş, SecretCV, Eleman.net, İŞKUR, Jooble, LinkedIn, 
+              Toptalent.co, İşin Olsun ve diğer iş sitelerinden link yapıştırın.
+            </p>
           </div>
 
         </div>
       </div>
       
       {/* Bottom Notice */}
-      <div className="text-center pb-12">
-        <p className="text-gray-500 text-sm">
-          Gemini AI ile desteklenen anlık mülakat deneyimi
-        </p>
+      <div className="text-center pb-8">
+        <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 max-w-4xl mx-auto border border-green-200">
+          <p className="text-gray-700 font-medium mb-2">
+            ⚡ <strong>Hızlı Başlangıç:</strong> İlan yükleme → Dinamik sorular → Canlı konuşma (≤ 10 saniye)
+          </p>
+          <p className="text-sm text-gray-600">
+            Sistem iş ilanınıza göre otomatik olarak uygun soruları seçer, 
+            karakterinizi oluşturur ve mikrofonunuzu açarak gerçek müşteri deneyimi başlatır.
+          </p>
+        </div>
       </div>
     </div>
   )
