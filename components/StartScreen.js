@@ -137,17 +137,6 @@ Maaş: Rekabetçi + Yan haklar
           İş ilanınızı yükleyin, 10 saniye içinde gerçek müşteri ile konuşmaya başlayın. 
           AI anlık olarak size özel senaryo ve karakteri oluşturur.
         </p>
-        <div className="text-sm text-gray-500 max-w-3xl mx-auto">
-          <p className="mb-2">
-            ✨ <strong>Akıllı Analiz:</strong> İş ilanı içeriğine göre dinamik sorular ve kişiselleştirilmiş müşteri profili
-          </p>
-          <p className="mb-2">
-            🎯 <strong>Gerçek Senaryo:</strong> Pozisyonunuza uygun yaş, cinsiyet ve davranış kalıpları ile otomatik karakter
-          </p>
-          <p>
-            🎙️ <strong>Canlı Görüşme:</strong> Mikrofon iznini verin, AI müşteriniz sizi bekliyor
-          </p>
-        </div>
       </header>
 
       {/* Main Grid */}
