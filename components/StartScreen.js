@@ -131,7 +131,7 @@ Maaş: Rekabetçi + Yan haklar
       {/* Header */}
       <header className="text-center py-12">
         <h1 className="text-4xl md:text-5xl font-light text-gray-800 mb-4">
-          Anında Role-Play Deneyimi
+          loko loko loko HR simulation
         </h1>
         <p className="text-gray-600 text-lg max-w-4xl mx-auto mb-6">
           İş ilanınızı yükleyin, 10 saniye içinde gerçek müşteri ile konuşmaya başlayın. 
