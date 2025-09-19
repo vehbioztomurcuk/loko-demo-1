@@ -145,7 +145,7 @@ Maaş: Rekabetçi + Yan haklar
           
           {/* Left Side - File Upload */}
           <div className="text-center">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-8">📎 İş İlanı Yükle</h2>
+            <h2 className="text-2xl font-semibold text-gray-800 mb-8">İLAN DÖKÜMANI YÜKLE</h2>
             
             <div className="space-y-6">
               <button 
@@ -165,7 +165,7 @@ Maaş: Rekabetçi + Yan haklar
 
           {/* Right Side - URL Input */}
           <div className="text-center">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-8">🔗 İlan Linkini Yapıştır</h2>
+            <h2 className="text-2xl font-semibold text-gray-800 mb-8">İLAN LİNKİNİ YAPIŞTIR</h2>
             
             <div className="space-y-6">
               <button 
@@ -187,17 +187,6 @@ Maaş: Rekabetçi + Yan haklar
       </div>
       
       {/* Bottom Notice */}
-      <div className="text-center pb-8">
-        <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 max-w-4xl mx-auto border border-green-200">
-          <p className="text-gray-700 font-medium mb-2">
-            ⚡ <strong>Hızlı Başlangıç:</strong> İlan yükleme → Dinamik sorular → Canlı konuşma (≤ 10 saniye)
-          </p>
-          <p className="text-sm text-gray-600">
-            Sistem iş ilanınıza göre otomatik olarak uygun soruları seçer, 
-            karakterinizi oluşturur ve mikrofonunuzu açarak gerçek müşteri deneyimi başlatır.
-          </p>
-        </div>
-      </div>
     </div>
   )
 }
