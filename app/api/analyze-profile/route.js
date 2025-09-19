@@ -12,64 +12,74 @@ export async function POST(request) {
     
     if (type === 'job-posting') {
       prompt = `
-Aşağıdaki iş ilanına göre, bu pozisyona başvuracak bir adayın profilini analiz et ve onun için uygun bir müşteri senaryosu oluştur. Sigorta satışı role-play için kullanılacak.
+Aşağıdaki iş ilanına göre, bu pozisyona başvuran bir adayın mülakat senaryosunu oluştur. Sen işveren/müdür olarak mülakat yapacaksın.
 
 İş İlanı:
 ${profileData}
 
 Lütfen şu formatta bir JSON yanıt ver:
 {
-  "candidate": {
-    "title": "Aday pozisyonu (örn: Yazılım Geliştirme Uzmanı)",
-    "age": "Yaş tahmini (25-45 arası)",
-    "experience": "Deneyim seviyesi (Junior/Mid/Senior)",
-    "salary_range": "Maaş beklentisi",
-    "characteristics": "Kişilik özellikleri ve davranış kalıpları",
-    "needs": "Sigorta ihtiyaçları"
+  "position": {
+    "title": "Pozisyon adı",
+    "department": "Departman",
+    "level": "Junior/Mid/Senior",
+    "salary_range": "Maaş aralığı",
+    "requirements": "Ana gereksinimler",
+    "company_info": "Şirket hakkında kısa bilgi"
+  },
+  "interviewer": {
+    "name": "Müdür/İK uzmanı adı",
+    "title": "Pozisyon",
+    "personality": "Mülakat tarzı (dostane/resmi/detaylı)",
+    "focus_areas": ["Odaklanacağı ana konular"]
   },
   "scenario": {
-    "name": "Senaryo adı",
-    "description": "Detaylı senaryo açıklaması",
+    "name": "Mülakat senaryosu adı",
+    "description": "Mülakat ortamı ve beklentiler",
     "difficulty": "Kolay/Orta/Zor",
-    "customer_type": "Müşteri tipi",
-    "objections": ["Olası itirazlar listesi"]
+    "duration": "Tahmini süre",
+    "key_questions": ["Sorulacak ana sorular"]
   }
 }
 
-Türkçe yanıt ver ve gerçekçi bir profil oluştur. Sigorta satışında kullanılacak, bu yüzden adayın yaşam durumu, gelir seviyesi ve risk algısını dikkate al.
+Türkçe yanıt ver. Sen işveren rolünde olacaksın, kullanıcı ise iş başvurusunda bulunan aday.
 `
     } else if (type === 'cv-file') {
       prompt = `
-Bu CV verisine göre, kişinin profilini analiz et ve onun için uygun bir müşteri senaryosu oluştur. Sigorta satışı role-play için kullanılacak.
+Bu CV verisine göre, kişinin iş mülakatı için senaryo oluştur. Sen işveren rolünde olacaksın.
 
 CV Verisi:
 ${profileData}
 
 Lütfen şu formatta bir JSON yanıt ver:
 {
-  "candidate": {
-    "title": "Pozisyon/Meslek",
-    "age": "Yaş tahmini",
-    "experience": "Deneyim seviyesi",
-    "characteristics": "Kişilik özellikleri",
-    "needs": "Sigorta ihtiyaçları"
+  "position": {
+    "title": "Uygun pozisyon",
+    "level": "Junior/Mid/Senior",
+    "department": "Departman"
+  },
+  "interviewer": {
+    "name": "Müdür adı",
+    "title": "Pozisyon",
+    "personality": "Mülakat tarzı"
   },
   "scenario": {
-    "name": "Senaryo adı", 
+    "name": "Mülakat senaryosu",
     "description": "Senaryo açıklaması",
-    "difficulty": "Kolay/Orta/Zor"
+    "difficulty": "Kolay/Orta/Zor",
+    "key_questions": ["Ana sorular"]
   }
 }
 
-Türkçe yanıt ver.
+Türkçe yanıt ver. Sen işveren, kullanıcı iş başvurusu yapan aday.
 `
     } else {
       prompt = `
-Bu URL'den elde edilen profil verisine göre bir müşteri senaryosu oluştur:
+Bu URL'den elde edilen iş ilanı verisine göre mülakat senaryosu oluştur:
 
 ${profileData}
 
-JSON formatında Türkçe yanıt ver.
+JSON formatında Türkçe yanıt ver. Sen işveren, kullanıcı başvuru sahibi.
 `
     }
 
@@ -86,20 +96,26 @@ JSON formatında Türkçe yanıt ver.
     } catch (parseError) {
       // If JSON parsing fails, create a fallback response
       return Response.json({
-        candidate: {
-          title: "Yazılım Geliştirme Uzmanı",
-          age: "28",
-          experience: "Mid-level",
+        position: {
+          title: "Yazılım Geliştirici",
+          department: "Teknoloji",
+          level: "Mid-level",
           salary_range: "15.000-25.000 TL",
-          characteristics: "Teknik detaylara odaklı, analitik düşünen, yenilikçi çözümler arayan, stabil gelir sahibi profesyonel",
-          needs: "Kariyer gelişimi ile birlikte artan gelir için tasarruf planları, sağlık güvencesi, emeklilik planlaması"
+          requirements: "React, Node.js, veritabanı bilgisi",
+          company_info: "Teknoloji odaklı dinamik şirket"
+        },
+        interviewer: {
+          name: "Ahmet Yılmaz",
+          title: "Teknoloji Müdürü",
+          personality: "Dostane ve teknik odaklı",
+          focus_areas: ["Teknik beceriler", "Problem çözme", "Takım çalışması"]
         },
         scenario: {
-          name: "Genç Profesyonel - Teknoloji Sektörü",
-          description: "28 yaşında yazılım geliştirme uzmanı. Kariyerinde yükselme döneminde, gelecek planları yapıyor. Teknik detaylara hakim, araştırmacı kişiliğe sahip.",
+          name: "Yazılım Geliştirici Mülakatı",
+          description: "Orta seviye yazılım geliştirici pozisyonu için teknik mülakat",
           difficulty: "Orta",
-          customer_type: "Araştırmacı ve detay odaklı müşteri",
-          objections: ["Başka şirketlerle karşılaştırma yapmak istiyor", "Teknik detayları merak ediyor", "Uzun vadeli yatırım getirisi hesaplıyor"]
+          duration: "45 dakika",
+          key_questions: ["React deneyiminizden bahsedin", "Zorlandığınız bir proje örneği", "Neden bizimle çalışmak istiyorsunuz?"]
         }
       })
     }
@@ -109,16 +125,21 @@ JSON formatında Türkçe yanıt ver.
     return Response.json({ 
       error: 'Profil analizi sırasında bir hata oluştu.',
       fallback: {
-        candidate: {
-          title: "Profesyonel",
-          age: "30",
-          characteristics: "Başarılı, hedef odaklı",
-          needs: "Güvenli gelecek planlaması"
+        position: {
+          title: "Genel Pozisyon",
+          department: "İnsan Kaynakları",
+          level: "Mid-level"
+        },
+        interviewer: {
+          name: "İK Uzmanı",
+          title: "İnsan Kaynakları Müdürü",
+          personality: "Profesyonel ve anlayışlı"
         },
         scenario: {
-          name: "Genel Profesyonel Senaryo",
-          description: "Kariyer sahibi profesyonel ile sigorta görüşmesi",
-          difficulty: "Orta"
+          name: "Genel İş Mülakatı",
+          description: "Standart iş mülakatı süreci",
+          difficulty: "Orta",
+          key_questions: ["Kendinizden bahsedin", "Neden bu pozisyonu istiyorsunuz?"]
         }
       }
     }, { status: 200 })
