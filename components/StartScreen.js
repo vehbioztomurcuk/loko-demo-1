@@ -134,8 +134,7 @@ Maaş: Rekabetçi + Yan haklar
           loko loko loko HR simulation
         </h1>
         <p className="text-gray-600 text-lg max-w-4xl mx-auto mb-6">
-          İş ilanınızı yükleyin, 10 saniye içinde gerçek müşteri ile konuşmaya başlayın. 
-          AI anlık olarak size özel senaryo ve karakteri oluşturur.
+"Hazırlık Simülasyonda, Başarı Mülakatta.”
         </p>
       </header>
 
