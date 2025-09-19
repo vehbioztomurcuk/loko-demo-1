@@ -1,0 +1,85 @@
+{
+    "scenarios": [
+        {
+            "id": "cold_call",
+            "name": "Soğuk Arama Senaryosu",
+            "description": "Satış temsilcisi, hiç tanımadığı bir potansiyel müşteriyi arayarak sigorta ürünleri hakkında bilgi vermeye çalışıyor."
+        },
+        {
+            "id": "referral",
+            "name": "Referans Üzerinden Görüşme",
+            "description": "Mevcut bir müşterinin tavsiyesi ile yapılan görüşme. Müşteri sizin adınızı duymuş."
+        },
+        {
+            "id": "web_lead",
+            "name": "Webden Gelen Talep",
+            "description": "Müşteri sitenizden bilgi talebi gönderdikten sonra aranıyor."
+        },
+        {
+            "id": "upsell_existing",
+            "name": "Mevcut Müşteri Ek Satış",
+            "description": "Halihazırda poliçesi olan müşteriye ek ürün satışı yapılıyor."
+        },
+        {
+            "id": "urgent_need",
+            "name": "Acil İhtiyaç Görüşmesi",
+            "description": "Müşterinin yakın zamanda sigorta ihtiyacı oluşmuş (evlilik, çocuk, iş değişikliği vb.)"
+        }
+    ],
+    "customer_profiles": [
+        {
+            "id": "young_professional",
+            "name": "Genç Profesyonel",
+            "description": "25-35 yaşlarında, kariyerinin başında veya orta kademesinde çalışan profesyonel. Gelecekteki finansal güvenliği düşünmeye başlamış."
+        },
+        {
+            "id": "middle_age_parent",
+            "name": "Orta Yaş Aile Reisi",
+            "description": "35-50 yaşlarında, evli ve çocuk sahibi. Ailenin finansal sorumluluğunu taşıyor. Hem kendisi hem ailesi için güvence arıyor."
+        },
+        {
+            "id": "near_retirement",
+            "name": "Emekliliğe Yakın Çalışan",
+            "description": "50-60 yaşlarında, emekliliğine 5-15 yıl kalmış deneyimli çalışan. Biriktirdiği parası var ama yeterli olup olmadığından endişeli."
+        },
+        {
+            "id": "small_business_owner",
+            "name": "Küçük İşletme Sahibi",
+            "description": "İşletmesinin finansal geleceğini düşünen, hem kendisi hem çalışanları için sigorta arayan girişimci. Vergi avantajları önemli."
+        },
+        {
+            "id": "existing_customer",
+            "name": "Mevcut Müşteri (Ek Ürün)",
+            "description": "Firma'da mevcut bir poliçesi olan, deneyimi bulunan müşteri. Şirket hizmetlerini biliyor, ek ürünler için görüşüyor."
+        }
+    ],
+    "difficulty_levels": [
+        {
+            "id": "easy",
+            "name": "Kolay",
+            "description": "Temel sorular, sınırlı itiraz; öğrenme odaklı"
+        },
+        {
+            "id": "medium",
+            "name": "Orta",
+            "description": "Dengeli itirazlar, detay sorguları; senaryo derinleşir"
+        },
+        {
+            "id": "hard",
+            "name": "Zor",
+            "description": "Yoğun fiyat/özellik itirazı, karar geciktirme taktikleri"
+        }
+    ],
+    "call_direction": [
+        {
+            "id": "outbound",
+            "name": "Sen Müşteriyi Ararsın (Outbound)",
+            "description": "Senaryoyu outbound kurgulayarak ilk repliğin satış temsilcisinden geleceğini belirleyin."
+        },
+        {
+            "id": "inbound",
+            "name": "Müşteri Seni Arar (Inbound)",
+            "description": "Senaryoyu inbound kurgulayarak ilk repliğin müşteriden geleceğini belirleyin."
+        }
+    ]
+}
